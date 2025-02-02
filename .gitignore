@@ -1,0 +1,25 @@
+# Composer dependencies
+/vendor/
+composer.phar
+
+# Environment & Config
+.env
+.env.local
+.env.*
+
+# IDE & System Files
+/.vscode/
+/.idea/
+/Thumbs.db
+/.DS_Store
+
+# Logs & Cache
+/logs/
+/cache/
+/storage/logs/
+/storage/framework/cache/
+
+# Node.js (if applicable)
+/node_modules/
+/npm-debug.log
+/yarn.lock
