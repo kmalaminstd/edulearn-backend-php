@@ -14,7 +14,10 @@
 
             try{
 
-                $query = "SELECT u.*, r.name as role_name 
+                $query = "SELECT u.*, r.name as role_name ,
+                        CASE 
+                        WHEN u.last_activity >= NOW() - INTERVAL 5 MINUTE THEN 'Online' ELSE 'Offline'
+                        END AS isOnline
                          FROM users u 
                          JOIN roles r ON u.role_id = r.id
                          ORDER BY created_at DESC LIMIT 2";

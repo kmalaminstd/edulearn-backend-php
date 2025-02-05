@@ -17,7 +17,7 @@
                 $userCountQuery = 'SELECT COUNT(*) AS total_users FROM users';
                 $teacherCountQuery = 'SELECT COUNT(*) AS total_teachers FROM users WHERE role_id = 2';
                 $studentCountQuery = 'SELECT COUNT(*) AS total_student FROM users WHERE role_id = 1';
-                $courseCountQuery = 'SELECT COUNT(*) AS total_courses FROM videos';
+                $courseCountQuery = 'SELECT COUNT(*) AS total_courses FROM course';
     
                 $uStmt = $this->conn->prepare($userCountQuery);
                 $uStmt->execute();

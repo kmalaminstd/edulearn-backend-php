@@ -12,6 +12,7 @@
     if($_SERVER['REQUEST_METHOD'] !== 'GET'){
         http_response_code(403);
         echo json_encode(['message' => 'Method not allowed']);
+        exit;
     }
 
     $header = getallheaders();
@@ -24,6 +25,7 @@
     if(!$auth){
         http_response_code(401);
         echo json_encode(['message' => 'Unauth­orized']);
+        exit;
     }
 
     $database = new Database();

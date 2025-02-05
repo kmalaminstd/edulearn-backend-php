@@ -72,6 +72,15 @@
         case '/user-requested-course-for-show.php';
             require './src/routes/userSelectedCourseToShow.php';
             break;
+        case '/update-last-activity.php';
+            require './src/routes/updateLastActivity.php';
+            break;
+        case '/course-list-from-admin.php';
+            require './src/routes/courseListForAdmin.php'; // access the course list from admin dashboard
+            break;
+        case '/admin-recent-course-list.php';
+            require './src/routes/recentCourseListForAdmin.php';
+            break;
         default:
             echo "Page not found";
             break;

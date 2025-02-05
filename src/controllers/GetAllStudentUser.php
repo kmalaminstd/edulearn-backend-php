@@ -5,16 +5,21 @@
     class GetAllStudentUsers {
 
         private $conn;
+        private $page;
+        private $limit = 10;
 
-        public function __construct($db){
+        public function __construct($db , $page){
             $this->conn = $db;
+            $this->page = $page;
         }
 
         public function studentUser(){
 
             try{
+
+                $offset = ($this->page - 1) * $this->limit;
                 
-                $query = "SELECT * FROM users WHERE role_id = 1 ";
+                $query = "SELECT * FROM users WHERE role_id = 1 LIMIT $this->limit OFFSET  $offset";
                 $stmt = $this->conn->prepare($query);
 
                 if($stmt->execute()){

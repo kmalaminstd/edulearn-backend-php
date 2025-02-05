@@ -28,7 +28,7 @@
 
     $database = new Database();
     $db = $database->connect();
-
+ 
     $statCounter = new StatCounter($db);
     $res = $statCounter->count();
 

@@ -5,18 +5,27 @@
     class GetAllUsers {
 
         public $conn;
+        private $offset;
+        private $limit = 10;
 
-        public function __construct($db){
+        public function __construct($db, $offset){
             $this->conn = $db;
+            $this->offset = ($offset - 1) * $this->limit;
         }
 
         public function usersList(){
 
+            
+
             try{
 
-                $query = "SELECT u.*, r.name as role_name 
+                $query = "SELECT u.*, r.name as role_name ,
+                        CASE 
+                            WHEN u.last_activity >= NOW() - INTERVAL 5 MINUTE THEN 'Online'
+                            ELSE 'Offline'
+                        END AS isOnline
                          FROM users u 
-                         JOIN roles r ON u.role_id = r.id";
+                         JOIN roles r ON u.role_id = r.id LIMIT $this->limit OFFSET $this->offset";
                 $stmt = $this->conn->prepare($query);
                 $stmt->execute();
     
