@@ -18,7 +18,7 @@
     $header = getallheaders();
 
 
-    if(!$header || !$header['Authorization']){
+    if(!$header || !$header['Authorization'] || !$header['page']){
         http_response_code(400);
         echo json_encode(['message' => 'Headers error']);
         exit;
@@ -35,7 +35,9 @@
         exit;
     }
 
-    $userShowedCourseCls = new UseredShowedCourseList($db);
+    $page = $header['page'];
+
+    $userShowedCourseCls = new UseredShowedCourseList($db, $page);
     $resp = $userShowedCourseCls->courseList();
 
     echo $resp->response();
