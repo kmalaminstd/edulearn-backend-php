@@ -90,6 +90,12 @@
         case '/publisher-update-course.php';
             require './src/routes/publisherEditCourse.php'; // update course the publisher
             break;
+        case '/reset-password-request.php';
+            require './src/routes/requestResetPassword.php'; // request password reset and get reset link
+            break;
+        case '/confirm-reset-password.php';
+            require './src/routes/confirmResetPassword.php'; // confirm the reset password and set a new password
+            break;
         default:
             echo "Page not found";
             break;

@@ -9,7 +9,7 @@
     require "./src/config/Database.php";
     
 
-    try{
+    try{ 
 
         // verify request method
         if($_SERVER['REQUEST_METHOD'] !== 'POST'){

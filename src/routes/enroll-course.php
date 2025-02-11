@@ -19,7 +19,7 @@
 
     if(!$header || !$header['Authorization'] || !$header['student_id']){
         http_response_code(400);
-        echo json_encode(['message' => 'Headers error']);
+        echo json_encode(['message' => 'Headers error']); 
         exit;
     }
     $database = new Database();
@@ -38,7 +38,7 @@
     $student_id = $header['student_id'];
     $payment = true;
 
-    $data = json_encode(['course_id' => $course_id, 'student_id' => $student_id, 'payment' => $payment]);
+    $data = ['course_id' => $course_id, 'student_id' => $student_id, 'payment' => $payment];
 
     // echo $data;
 

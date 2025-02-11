@@ -6,7 +6,7 @@
 • User registration and login system  ✔️✔️✔️
 • Role-based access control (Admin, Teacher, Student) ✔️✔️✔️
 • JWT token-based authentication ✔️✔️✔️
-• Password reset functionality (Planned but not implemented) ❗❗❗
+• Password reset functionality (Working on it) 🔄🔄🔄
 
 👤 User Management
 -----------------
@@ -18,7 +18,7 @@
 📝 Course Management
 ------------------
 • Course creation ✔️✔️✔️
-• Course editing 🔄🔄🔄
+• Course editing ✔️✔️✔️
 • Course categorization ✔️✔️✔️
 • Course enrollment system ✔️✔️✔️
 • Progress tracking (Planned but not added. Will add later) ❗❗❗
