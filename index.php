@@ -96,6 +96,9 @@
         case '/confirm-reset-password.php';
             require './src/routes/confirmResetPassword.php'; // confirm the reset password and set a new password
             break;
+        case '/search-course-by-title.php';
+            require './src/routes/searchCourseByTitle.php'; // search course by title text
+            break;
         default:
             echo "Page not found";
             break;

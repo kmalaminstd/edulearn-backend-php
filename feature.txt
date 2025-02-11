@@ -1,3 +1,7 @@
+✔️✔️✔️ = Completed
+🔄🔄🔄 = On progress
+❗❗❗     = Can be add later
+
 📚 EDUWEB BACKEND FEATURES
 ==========================
 
@@ -6,7 +10,7 @@
 • User registration and login system  ✔️✔️✔️
 • Role-based access control (Admin, Teacher, Student) ✔️✔️✔️
 • JWT token-based authentication ✔️✔️✔️
-• Password reset functionality (Working on it) 🔄🔄🔄
+• Password reset functionality (Working on it) ✔️✔️✔️
 
 👤 User Management
 -----------------
