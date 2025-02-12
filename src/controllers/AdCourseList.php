@@ -17,7 +17,15 @@
 
             try{
 
-                $query = "SELECT course.id as course_id, title, description, course.video_url, course.thumbnail_url, course.price, course.category, course.created_at as publish_date, users.username as author_name FROM course JOIN users ON users.id = course.teacher_id LIMIT $this->limit OFFSET $this->offset";
+                $query = "SELECT 
+                course.id as course_id, title, description, course.video_url, course.thumbnail_url, course.price, course.category, course.created_at as publish_date, users.username as author_name,
+                COUNT(course_id) as number_of_student
+                FROM course 
+                JOIN users ON users.id = course.teacher_id
+                LEFT JOIN enrolled_course ON course.id = enrolled_course.course_id
+                GROUP BY course.id, users.username
+                LIMIT $this->limit 
+                OFFSET $this->offset";
 
                 $stmt = $this->conn->prepare($query);
                 $stmt->execute();

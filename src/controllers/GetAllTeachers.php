@@ -14,7 +14,11 @@
 
             try{
                 
-                $query = "SELECT * FROM users WHERE role_id = 2 ";
+                $query = "SELECT * , COUNT(course.id) AS number_of_course 
+                FROM users 
+                LEFT JOIN course ON course.teacher_id = users.id
+                WHERE users.role_id = 2 
+                GROUP BY users.id, users.username";
                 $stmt = $this->conn->prepare($query);
 
                 if($stmt->execute()){

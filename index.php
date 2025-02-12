@@ -34,10 +34,10 @@
             require './src/routes/student-list.php';
             break;
         case'/teacherlist.php':
-            require './src/routes/teacherList.php';
+            require './src/routes/teacherList.php'; // getting full teacher list from dashboard
             break;
         case'/recentuser.php':
-            require './src/routes/recentUsers.php';
+            require './src/routes/recentUsers.php'; // getting recent user list (2 user) from dashboard
             break;
         case'/getstatinfo.php':
             require './src/routes/statCounter.php';
@@ -75,7 +75,7 @@
         case '/update-last-activity.php';
             require './src/routes/updateLastActivity.php'; // updating users last activity in database
             break;
-        case '/course-list-from-admin.php';
+        case '/course-list-from-admin.php'; 
             require './src/routes/courseListForAdmin.php'; // access the course list from admin dashboard
             break;
         case '/admin-recent-course-list.php';

@@ -14,7 +14,7 @@
         http_response_code(403);
         echo json_encode(['message' => 'Method not allowed']);
     }
-
+ 
     // verify auth
     $getAllHeaders = getallheaders();
     $token = str_replace( 'Bearer', '', $getAllHeaders['Authorization']);
