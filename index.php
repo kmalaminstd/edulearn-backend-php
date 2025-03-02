@@ -99,6 +99,12 @@
         case '/search-course-by-title.php';
             require './src/routes/searchCourseByTitle.php'; // search course by title text
             break;
+        case '/pay-with-stripe.php';
+            require './src/routes/test_stripe_payment.php'; // only for test !! this will be delete later
+            break;
+        case '/get-course-by-id.php'; // get course details by id
+            require './src/routes/courseById.php';
+            break;
         default:
             echo "Page not found";
             break;

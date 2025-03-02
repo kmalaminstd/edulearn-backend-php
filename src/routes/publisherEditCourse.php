@@ -52,10 +52,10 @@
         'price' => $price
     ];
 
-    var_dump($data);
+    print_r($data['title']);
 
     // validating data
-    if(!$data || !$description || !$category || !$price){
+    if($title === null || $description === null || $category === null || $price === ''){
         http_response_code(400);
         echo json_encode(['message' => 'Invalid field']);
         exit;
